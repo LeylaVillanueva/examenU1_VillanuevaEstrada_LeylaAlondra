@@ -1,0 +1,201 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        .header {
+            background-color: #c03232b4;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 85px;
+            padding: 5px 10%;
+        }
+
+        body {
+            background-color: #EFEDFF;
+        }
+
+        .icon a i {
+            color: #EFEFF0;
+            margin-left: 0px;
+            font-size: 35px;
+        }
+
+        .icon a i:hover {
+
+            color: #ffffff;
+            transform: scale(2.3);
+        }
+
+        h2 {
+            color: #EFEFF0;
+        }
+
+        .cont {
+            width: 49%;
+            background: #b9b9ba98;
+            display: flex;
+            justify-content: space-between;
+            padding: 25px;
+            flex-wrap: wrap;
+            gap: 25px;
+            position: relative;
+            top: 65px;
+        }
+
+        .contenedor {
+            width: 95%;
+            background: #b9b9ba98;
+            display: flex;
+            justify-content: space-between;
+            padding: 25px;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        section {
+            display: flex;
+            width: 600px;
+            height: 600px;
+            margin-left: 30%;
+            margin-right: 30%;
+            position: absolute;
+            left: 250px;
+            top: 150px;
+        }
+
+        section img {
+            width: 0px;
+            flex-grow: 1;
+            object-fit: cover;
+            opacity: .9;
+        }
+
+        section img:hover {
+            cursor: crosshair;
+            width: 300px;
+            opacity: 1;
+            filter: contrast(120%);
+        }
+    </style>
+    <header class="header" ;">
+        <div></div>
+        <h2>5 Seconds of Summer</h2>
+        <h2 id="mensaje">hola mundo</h2>
+        <button onclick="ocultarMensaje()">Ocultar mensaje</button>
+
+        <script>
+            function ocultarMensaje() {
+                var mensaje = document.getElementById('mensaje');
+                mensaje.style.display = 'none';
+            }
+        </script>
+
+    </header>
+    <title>5SOS</title>
+    <style>
+        body {
+            background-image: url('https://i.pinimg.com/originals/b7/de/71/b7de71d3aa9a71066783391924df8cce.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+
+</head>
+
+<body>
+    <button onclick="cambiarFondo()">Cambiar fondo</button>
+
+    <script>
+        function cambiarFondo() {
+            document.body.style.backgroundImage = "url('https://img.europapress.es/fotoweb/fotonoticia_20190523180838_1200.jpg')";
+        }
+    </script>
+    <div class="cont">
+        <h1><i> <strong> FIVE SECONDS OF SUMMER </strong></i></h1>
+
+        <p>Banda originaria de australia creada en el 2011, especializada en el género del pop-rock
+            <li>
+                • Sellos discograficos: Hi Or Hey Records, BMG Rights Management, Capitol Records, Interscope Records
+                <br>• Fundación: 3 de diciembre de 2011
+                <br>• Lugar de origen: Sídney, Australia
+            </li>
+        </p>
+    </div>
+    <section>
+        <img id="miImagen"
+            src="https://akamai.sscdn.co/uploadfile/letras/fotos/a/1/8/f/a18fcdd7a20c617d77d3df972e2b7290.jpg"
+            alt="Luke">
+        <img src="https://i.pinimg.com/originals/67/e8/72/67e872a382c7f77dc9c0816f4613605f.jpg" alt="Calum">
+        <img src="https://i.pinimg.com/originals/b6/48/5f/b6485fd5771449d59572e8740eb91bf4.jpg" alt="Micheal">
+        <img src="https://pbs.twimg.com/media/D063WrAWwAAQCU5.jpg" alt="Ashton">
+    </section>
+
+    <div class="cont">
+        <br>
+        <p><strong>Conformada por 4 integrantes que son: </strong></p></br>
+        <p><b> Luke Hemmings (Voz principal)</b> </p>
+        <p><b> Micheal Clifford (Guitarrista)</b> </p>
+        <p><b> Calum Hood (Bajista) </b></p>
+        <p><b> Ashton Irwin (Baterista)</b> </p>
+
+        <br>
+        <div class="contenedor">
+            <h2>5SOS5 </h2>
+            <br>
+            <p>5SOS5, que dura una hora con cuatro minutos, es el quinto disco de la agrupación de pop y tardó dos años
+                en llegar a sus fans, pues su última producción había sido el disco Calm (2020). </p>
+            <h2>Calificación: </h2>
+            <br><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="miDiv"></div>
+
+    <button onclick="escribirTexto()">Escribir en el div</button>
+
+    <script>
+        function escribirTexto() {
+            var div = document.getElementById('miDiv');
+            div.innerHTML = "<h1>Este texto no lo escribí yo, lo escribió JavaScript</h1>";
+        }
+    </script>
+    <button
+        onclick="cambiarImagen('https://64.media.tumblr.com/e07be4e3ef8f6490f7192d33e2ac1728/tumblr_n6sa55DTyB1td9mxco1_500.jpg')">Cambiar
+        imagen</button>
+    <button onclick="restaurarImagen()">Restaurar imagen original</button>
+
+    <script>
+        var imagenOriginal = 'https://akamai.sscdn.co/uploadfile/letras/fotos/a/1/8/f/a18fcdd7a20c617d77d3df972e2b7290.jpg';
+        var imagenActual = imagenOriginal;
+
+        function cambiarImagen(nuevaImagen) {
+            var imagen = document.getElementById('miImagen');
+            imagen.src = nuevaImagen;
+            imagenActual = nuevaImagen;
+        }
+
+        function restaurarImagen() {
+            var imagen = document.getElementById('miImagen');
+            imagen.src = imagenOriginal;
+            imagenActual = imagenOriginal;
+        }
+    </script>
+</body>
+
+</html>
