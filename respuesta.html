@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <head>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <style type="text/css">
+            body {
+                font-family: 'Press Start 2P', cursive;
+                background-color: #000000;
+                color: #ffffff;
+            }
+    
+            h1,
+            h2 {
+                color: #ffffff;
+                text-transform: uppercase;
+            }
+    
+            a {
+                color: #ffffff;
+                text-decoration: none;
+            }
+    
+            a:hover {
+                color: #ff0000;
+                /* Cambia el color al pasar el ratón por encima */
+            }
+    
+            p {
+                color: #ffffff;
+            }
+    
+            #seguridad-contrasena {
+                color: #ff0000;
+                /* Color de advertencia de contraseña insegura */
+            }
+    
+            body {
+                background-image: url('https://images4.alphacoders.com/993/9938.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        </style>
+  <title>Respuesta de Registro</title>
+  <script>
+    window.onload = function() {
+      var urlParams = new URLSearchParams(window.location.search);
+      
+      var nombres = urlParams.get('nombres');
+      var apellidos = urlParams.get('apellidos');
+      var correo = urlParams.get('correo');
+      var fechaNacimiento = urlParams.get('fechaNacimiento');
+      var telefono = urlParams.get('telefono');
+      var usuario = urlParams.get('usuario');
+      var contrasena = urlParams.get('contrasena');
+      
+      document.getElementById("nombre-usuario").innerHTML = nombres;
+      document.getElementById("apellidos-usuario").innerHTML = apellidos;
+      document.getElementById("correo-usuario").innerHTML = '<a href="mailto:' + correo + '">' + correo + '</a>';
+      document.getElementById("telefono-usuario").innerHTML = '<a href="tel:' + telefono + '">' + telefono + '</a>';
+      
+      var fechaNacimientoArray = fechaNacimiento.split("-");
+      var anioNacimiento = parseInt(fechaNacimientoArray[0]);
+      var mesNacimiento = parseInt(fechaNacimientoArray[1]);
+      var diaNacimiento = parseInt(fechaNacimientoArray[2]);
+      var fechaActual = new Date();
+      var edad = fechaActual.getFullYear() - anioNacimiento;
+      if (fechaActual.getMonth() < mesNacimiento || (fechaActual.getMonth() === mesNacimiento && fechaActual.getDate() < diaNacimiento)) {
+        edad--;
+      }
+      document.getElementById("edad-usuario").innerHTML = edad;
+      
+      if (contrasena.length < 5) {
+        document.getElementById("seguridad-contrasena").innerHTML = "¡Advertencia! Tu contraseña es insegura.";
+      } else {
+        document.getElementById("seguridad-contrasena").innerHTML = "";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1 id="nombre-usuario"></h1>
+  <h2 id="apellidos-usuario"></h2>
+  <p>Correo: <span id="correo-usuario"></span></p>
+  <p>Telefono: <span id="telefono-usuario"></span></p>
+  <p>Edad: <span id="edad-usuario"></span></p>
+  <p id="seguridad-contrasena"></p>
+  
+</body>
+</html>
