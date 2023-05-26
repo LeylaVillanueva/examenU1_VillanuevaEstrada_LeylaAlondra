@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style type="text/css">
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        h1,
+        h2 {
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #ff0000;
+        }
+
+        p {
+            color: #ffffff;
+        }
+
+        #seguridad-contrasena {
+            color: #ff0000;
+        }
+
+        body {
+            background-image: url('https://i.pinimg.com/originals/d0/af/3e/d0af3e1799588ca0257269a0c7512cb6.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+    <title>Registro de Persona</title>
+    <script>
+        function validarFormulario() {
+            var contrasena = document.getElementById("contrasena").value;
+            var repetirContrasena = document.getElementById("repetir-contrasena").value;
+
+            if (contrasena !== repetirContrasena) {
+                alert("Las contraseñas no coinciden.");
+                return false;
+            }
+
+            if (contrasena.length < 5) {
+                alert("¡Advertencia! Tu contraseña es insegura.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+    <center>
+        </centerZ>
+        <h1>Registro de Persona</h1>
+    </center>
+    <form action="respuesta.html" method="get" onsubmit="return validarFormulario()">
+
+        <p><label>Nombres:</label>
+        <input type="text" name="nombres" required><br></p>
+
+        <p><label>Apellido:</label>
+        <input type="text" name="apellidos" required><br></p>
+
+        <p><label>Correo:</label>
+        <input type="email" name="correo" required><br></p>
+
+        <p><label>Fecha de Nacimiento:</label>
+        <input type="date" name="fechaNacimiento" required><br></p>
+
+        <p><label>Telefono:</label>
+        <input type="tel" name="telefono" required><br></p>
+
+        <p><label>Usuario:</label>
+        <input type="text" name="usuario" required><br></p>
+
+        <p><label>Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required><br></p>
+
+        <p><label>Repetir Contraseña:</label>
+        <input type="password" id="repetir-contrasena" name="repetirContrasena" required><br></p>
+
+        <button type="submit">Enviar</button>
+
+    </form>
+</body>
+
+</html>
